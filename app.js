@@ -1,3 +1,8 @@
+const SUPABASE_URL = "https://bgzqwvfubndfosdecwlu.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_p6zAbqptBjH1tr3Xdqyp7g_d7htH06E";
+
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 const STORAGE_KEYS = {
   theme: "pokemon_tracker_theme",
   mode: "pokemon_tracker_mode",
