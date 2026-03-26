@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon TCG Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <aside class="panel sidebar">
+      <div class="brand">
+        <div class="pokeBall"></div>
+        <div>
+          <h1>Pokémon TCG Tracker</h1>
+          <p class="subtitle">Fast set search + optional chance math</p>
+        </div>
+      </div>
+
+      <label>Mode</label>
+      <div class="modeButtons" id="modeButtons">
+        <button type="button" class="modeBtn active" data-mode="pokemon">Pokémon</button>
+        <button type="button" class="modeBtn" data-mode="set">Set</button>
+        <button type="button" class="modeBtn" data-mode="generations">Generations</button>
+        <button type="button" class="modeBtn" data-mode="holofoil">Holofoil</button>
+        <button type="button" class="modeBtn" data-mode="tracker">Tracker</button>
+      </div>
+
+      <label for="searchInput">Search</label>
+      <input id="searchInput" type="text" placeholder="Try Clefairy or 151" />
+
+      <div class="buttonRow">
+        <button id="searchBtn" class="primary">Search</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+
+      <hr />
+
+      <h2>Status</h2>
+      <div id="statusBox" class="statusBox">Ready.</div>
+
+      <div class="sidebarBottom">
+        <button id="themeToggleBtn" class="themeToggleBtn" type="button">🌙 Dark Mode</button>
+      </div>
+    </aside>
+
+    <section class="panel content">
+      <h2 id="resultsTitle">Results</h2>
+      <div id="summaryText" class="summaryText"></div>
+      <div id="results" class="cards"></div>
+    </section>
+  </main>
+
+  <div id="pokemonModal" class="modal hidden" aria-hidden="true">
+    <div class="modalBackdrop" id="modalBackdrop"></div>
+
+    <div class="modalCard" role="dialog" aria-modal="true" aria-labelledby="modalPokemonName">
+      <button id="modalCloseBtn" class="modalCloseBtn" type="button" aria-label="Close">✕</button>
+
+      <div id="modalBody" class="modalBody">
+        <div class="modalLoading">Loading Pokémon...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
